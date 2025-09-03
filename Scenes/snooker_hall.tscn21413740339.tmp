@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr7f3unpjbh4r"]
+
+[ext_resource type="Script" uid="uid://82mbnf1obp67" path="res://Scripts/snooker_hall.gd" id="1_52agk"]
+[ext_resource type="PackedScene" uid="uid://l21wlpf67qic" path="res://Scenes/management_ui.tscn" id="3_lvqey"]
+
+[node name="SnookerHall" type="Node2D"]
+position = Vector2(1165, 2)
+script = ExtResource("1_52agk")
+metadata/_edit_horizontal_guides_ = [-257.0]
+
+[node name="Tables" type="Node" parent="."]
+
+[node name="ManagementUI" parent="." instance=ExtResource("3_lvqey")]

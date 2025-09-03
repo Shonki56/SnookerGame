@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://l21wlpf67qic"]
+
+[ext_resource type="Script" uid="uid://datx54d22v5fr" path="res://Scripts/management_ui.gd" id="1_xbxjl"]
+[ext_resource type="Script" uid="uid://d3jwbs1ecxouj" path="res://Scripts/tables_shop.gd" id="2_2veev"]
+
+[node name="ManagementUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbxjl")
+
+[node name="TabletBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1161.0
+offset_bottom = 666.0
+color = Color(0.477274, 0.428652, 0.91569, 1)
+
+[node name="TurnTablesOnOffBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 783.0
+offset_top = 6.0
+offset_right = 1129.0
+offset_bottom = 388.0
+
+[node name="TotalMoneyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 22.0
+offset_right = 100.0
+offset_bottom = 45.0
+text = "Money: X"
+
+[node name="TablesShop" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 403.0
+offset_right = 1150.0
+offset_bottom = 454.0
+vertical = true
+script = ExtResource("2_2veev")
+
+[node name="Basic Table" type="Button" parent="TablesShop"]
+layout_mode = 2
+text = "Basic Table
+"
+
+[node name="Club Table" type="Button" parent="TablesShop"]
+layout_mode = 2
+text = "Club Table
+"
+
+[node name="Pro Table" type="Button" parent="TablesShop"]
+layout_mode = 2
+text = "Pro Table
+"

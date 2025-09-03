@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7jnsdbr72d4r"]
+
+[ext_resource type="Script" uid="uid://bq4is63kv4oge" path="res://Scripts/main_game_ui.gd" id="1_mx1e2"]
+
+[node name="MainGameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mx1e2")
+
+[node name="MoneyTimer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 937.0
+offset_top = 17.0
+offset_right = 1009.0
+offset_bottom = 40.0
+text = "Money: X"
