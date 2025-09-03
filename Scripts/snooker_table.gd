@@ -4,19 +4,12 @@ extends Node2D
 @export var tableQuality: Globals.tableQuality
 @export var tablePricePerHour: float
 
+
 func _ready() -> void:
 	pay_timer.timeout.connect(payForFullHour)
-	match tableQuality: # NOT WORKING DO TOMORROW
-		Globals.tableQuality.PRO:
-			tablePricePerHour = 500
-		Globals.tableQuality.GOOD:
-			tablePricePerHour = 200
-		Globals.tableQuality.BAD:
-			tablePricePerHour = 50
-	print(str(tablePricePerHour))
 
 
-var isTableBeingUsed
+var isTableBeingUsed = false
 
 var currentSessionPrice = 0
 
@@ -44,11 +37,13 @@ func pauseOrPlayTimerAndPayMoney(timer: Timer):
 	if timer.is_stopped() == true or timer.paused == true:
 		timer.paused = false
 		timer.start()
+		print(str(tablePricePerHour))
 	elif timer.paused == false:
 		timer.paused = true
 		payForIncompleteHour()
 		Globals.total_money += currentSessionPrice
 		Globals.updateAllMoneyLabels.emit()
+		
 		currentSessionPrice = 0
 	
 	

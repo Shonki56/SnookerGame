@@ -3,9 +3,10 @@ extends Control
 @onready var total_money_label: Label = $TotalMoneyLabel
 
 func _ready() -> void:
-	createButtons() # Run this again when new table is added
+	createButtons()
 	Globals.moneyLabelsArray.append(total_money_label)
-	Globals.updateTablesAndTableButtons.connect(createButtonForNewTablesBeingAdded)
+	#Globals.updateTablesAndTableButtons.connect(createButtonForNewTablesBeingAdded) # Not being emitted now
+	Globals.updateTableButtonsArray.connect(createButtonForNewTablesBeingAdded)
 	
 
 func _input(event):

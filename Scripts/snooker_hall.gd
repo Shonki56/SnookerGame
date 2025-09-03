@@ -6,20 +6,20 @@ var snookerTable = preload("res://Scenes/snooker_table.tscn")
 
 func _ready():
 	createTables()
-	Globals.updateTablesAndTableButtons.connect(createNewTableBoughtFromShopNew)
+	Globals.boughtNewTable.connect(addNewTableToSnookerHall)
 		
 func createTables():
 	for i in range(Globals.numberOfTables):
-		createTableNew(Globals.tablePositionsArray[i])
+		createTable(Globals.tablePositionsArray[i])
 
-func createTableNew(positionChild):
+func createTable(positionChild):
 	var newTable = snookerTable.instantiate()
 	newTable.position =	positionChild
 	tables.add_child(newTable)
 	Globals.tablesArray.append(newTable)
 	
-func createNewTableBoughtFromShopNew():
-	var newTable = snookerTable.instantiate()
-	newTable.position = Globals.tablePositionsArray[Globals.numberOfTables]
-	Globals.updateTablesArrayAndNumOfTables(newTable)
-	tables.add_child(newTable)
+func addNewTableToSnookerHall():
+	Globals.tableBeingBought.position = Globals.tablePositionsArray[Globals.numberOfTables - 1]
+	tables.add_child(Globals.tableBeingBought)
+	Globals.tableBeingBought = null
+	

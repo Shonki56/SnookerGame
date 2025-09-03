@@ -10,6 +10,7 @@ func _ready() -> void:
 	club_table.pressed.connect(buyGoodTable)
 	pro_table.pressed.connect(buyProTable)
 
+#TODO Clean up these functions a bit
 			
 func buyBadTable():
 	if Globals.total_money >= Globals.tablePrices["Bad"] and Globals.numberOfTables < Globals.maxTablesCount:
@@ -18,7 +19,10 @@ func buyBadTable():
 		var newTable = snookerTable.instantiate()
 		newTable.tableQuality = Globals.tableQuality.BAD
 		newTable.tablePricePerHour = 10.0
-		Globals.addTableAndButton()
+		Globals.updateTablesArrayAndNumOfTables(newTable)
+		Globals.tableBeingBought = newTable
+		Globals.boughtNewTable.emit()
+		Globals.updateTableButtonsArray.emit()
 		
 func buyGoodTable():
 	if Globals.total_money >= Globals.tablePrices["Good"] and Globals.numberOfTables < Globals.maxTablesCount:
@@ -27,7 +31,10 @@ func buyGoodTable():
 		var newTable = snookerTable.instantiate()
 		newTable.tableQuality = Globals.tableQuality.GOOD
 		newTable.tablePricePerHour = 50.0
-		Globals.addTableAndButton()
+		Globals.updateTablesArrayAndNumOfTables(newTable)
+		Globals.tableBeingBought = newTable
+		Globals.boughtNewTable.emit()
+		Globals.updateTableButtonsArray.emit()
 		
 func buyProTable():
 	if Globals.total_money >= Globals.tablePrices["Pro"] and Globals.numberOfTables < Globals.maxTablesCount:
@@ -36,7 +43,10 @@ func buyProTable():
 		var newTable = snookerTable.instantiate()
 		newTable.tableQuality = Globals.tableQuality.PRO
 		newTable.tablePricePerHour = 100.0
-		Globals.addTableAndButton()
+		Globals.updateTablesArrayAndNumOfTables(newTable)
+		Globals.tableBeingBought = newTable
+		Globals.boughtNewTable.emit()
+		Globals.updateTableButtonsArray.emit()
 		
 	
 	
