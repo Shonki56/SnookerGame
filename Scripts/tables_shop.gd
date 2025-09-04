@@ -1,7 +1,4 @@
 extends BoxContainer
-@onready var basic_table: Button = $"Basic Table"
-@onready var club_table: Button = $"Club Table"
-@onready var pro_table: Button = $"Pro Table"
 
 var snookerTable = preload("res://Scenes/snooker_table.tscn")
 

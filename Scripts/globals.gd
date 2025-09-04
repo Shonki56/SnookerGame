@@ -18,12 +18,6 @@ var buttonPressedIndex
 var maxTablesCount = 8
 var total_money = 200
 var isManagementPanelVisible = false
-var tablePrices = {
-	"Bad" : 20,
-	"Good" : 60,
-	"Pro" : 100
-}
-
 var tableInfo = {
 	"Bad": {"priceToBuy": 20, "quality": tableQuality.BAD, "pricePerHour": 20},
 	"Good": {"priceToBuy": 50, "quality": tableQuality.GOOD, "pricePerHour": 50},

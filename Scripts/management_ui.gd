@@ -31,13 +31,20 @@ func _on_button_pressed(button: Button):
 			break
 	if buttonIndex != -1:
 		Globals.tablesArray[buttonIndex].turnTableOnOrOff()
+		changeButtonText(Globals.buttonsArray[buttonIndex], Globals.tablesArray[buttonIndex].isTableBeingUsed, buttonIndex)
+		
+func changeButtonText(button: Button, isTableOn: bool, tableIndex: int):
+	if isTableOn == true:
+		button.text = "Turn Table " + str(tableIndex + 1) + " Off"
+	else:
+		button.text = "Turn Table " + str(tableIndex + 1) + " On"
+		
+	
 		
 
 func createSingleButton(buttonNumber):
 	var button = Button.new()
 	v_box_container.add_child(button)
-	button.position.x = buttonNumber * 200
-	button.position.y = 100
 	Globals.buttonsArray.append(button)
 	button.pressed.connect(func(): _on_button_pressed(button))
 	button.text = "Table " + str(buttonNumber + 1)
@@ -46,7 +53,6 @@ func createButtonForNewTablesBeingAdded():
 	var button = Button.new()
 	v_box_container.add_child(button)
 	Globals.buttonsArray.append(button)
-	button.position.x = Globals.buttonsArray.size()
 	button.pressed.connect(func(): _on_button_pressed(button))
 	button.text = "Table " + str(Globals.buttonsArray.size())
 	
