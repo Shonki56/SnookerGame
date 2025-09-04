@@ -5,6 +5,7 @@ extends BoxContainer
 
 var snookerTable = preload("res://Scenes/snooker_table.tscn")
 
+# Macbook git test
 func _ready() -> void:
 	basic_table.pressed.connect(buyBadTable)
 	club_table.pressed.connect(buyGoodTable)
