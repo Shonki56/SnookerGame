@@ -14,6 +14,13 @@ func buyTable(tableType):
 		Globals.tableBeingBought = newTable
 		Globals.boughtNewTable.emit()
 		Globals.updateTableButtonsArray.emit()
+	elif Globals.total_money < tableToBuy["priceToBuy"]:
+		Globals.currentPopUpMessage = Globals.popUpMessages["NotEnoughMoney"]
+		Globals.showPopUp.emit()
+	elif Globals.numberOfTables == 8:
+		Globals.currentPopUpMessage = Globals.popUpMessages["TooManyTables"]
+		Globals.showPopUp.emit()
+		
 		
 	
 	

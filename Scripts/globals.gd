@@ -2,6 +2,7 @@ extends Node
 
 signal updateTableButtonsArray
 signal boughtNewTable
+signal showPopUp
 	
 func updateTablesArrayAndNumOfTables(table):
 	tablesArray.append(table)
@@ -23,6 +24,13 @@ var tableInfo = {
 	"Good": {"priceToBuy": 50, "quality": tableQuality.GOOD, "pricePerHour": 50},
 	"Pro": {"priceToBuy": 100, "quality": tableQuality.PRO, "pricePerHour": 100}
 }
+
+var popUpMessages = {
+	"NotEnoughMoney" : "Insuffcient Funds",
+	"TooManyTables" : "Maximum Tables Reached"
+}
+
+var currentPopUpMessage: String
 enum tableQuality {BAD, GOOD, PRO}
 
 var cameraPosition
