@@ -23,6 +23,12 @@ var tablePrices = {
 	"Good" : 60,
 	"Pro" : 100
 }
+
+var tableInfo = {
+	"Bad": {"priceToBuy": 20, "quality": tableQuality.BAD, "pricePerHour": 20},
+	"Good": {"priceToBuy": 50, "quality": tableQuality.GOOD, "pricePerHour": 50},
+	"Pro": {"priceToBuy": 100, "quality": tableQuality.PRO, "pricePerHour": 100}
+}
 enum tableQuality {BAD, GOOD, PRO}
 
 var cameraPosition

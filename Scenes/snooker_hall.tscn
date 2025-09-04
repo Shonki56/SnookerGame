@@ -556,10 +556,10 @@ anchor_mode = 0
 script = ExtResource("3_83rsd")
 
 [node name="MainGameUI" parent="Camera2D" instance=ExtResource("3_sjwqj")]
-offset_left = 89.0
-offset_top = 20.0
-offset_right = 89.0
-offset_bottom = 20.0
+offset_left = -9.0
+offset_top = 1.0
+offset_right = -9.0
+offset_bottom = 1.0
 
 [node name="ManagementUI" parent="." instance=ExtResource("3_lvqey")]
 visible = false

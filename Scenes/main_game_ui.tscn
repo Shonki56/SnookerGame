@@ -14,7 +14,7 @@ script = ExtResource("1_mx1e2")
 
 [node name="TotalMoneyLabel" parent="." instance=ExtResource("2_h4c50")]
 layout_mode = 0
-offset_left = 1009.0
-offset_top = 46.0
-offset_right = 1081.0
-offset_bottom = 69.0
+offset_left = 949.0
+offset_top = 47.0
+offset_right = 1021.0
+offset_bottom = 70.0
