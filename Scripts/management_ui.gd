@@ -1,11 +1,8 @@
 extends Control
 @onready var v_box_container: VBoxContainer = $TurnTablesOnOffBox
-@onready var total_money_label: Label = $TotalMoneyLabel
 
 func _ready() -> void:
 	createButtons()
-	Globals.moneyLabelsArray.append(total_money_label)
-	#Globals.updateTablesAndTableButtons.connect(createButtonForNewTablesBeingAdded) # Not being emitted now
 	Globals.updateTableButtonsArray.connect(createButtonForNewTablesBeingAdded)
 	
 

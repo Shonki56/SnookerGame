@@ -1,15 +1,7 @@
 extends Node
 
-signal updateAllMoneyLabels
 signal updateTableButtonsArray
 signal boughtNewTable
-
-func _ready() -> void:
-	updateAllMoneyLabels.connect(updateMoneyLabelsFunction)
-	
-func updateMoneyLabelsFunction():
-	for label in moneyLabelsArray:
-		label.text = "Money: " + str(total_money).pad_decimals(2)
 	
 func updateTablesArrayAndNumOfTables(table):
 	tablesArray.append(table)
@@ -17,7 +9,7 @@ func updateTablesArrayAndNumOfTables(table):
 	
 var tableBeingBought
 
-var numberOfTables = 3
+var numberOfTables = 0
 var tablesArray = []
 var buttonsArray = []
 var moneyLabelsArray = []

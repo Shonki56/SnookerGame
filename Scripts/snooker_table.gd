@@ -42,7 +42,6 @@ func pauseOrPlayTimerAndPayMoney(timer: Timer):
 		timer.paused = true
 		payForIncompleteHour()
 		Globals.total_money += currentSessionPrice
-		Globals.updateAllMoneyLabels.emit()
 		
 		currentSessionPrice = 0
 	

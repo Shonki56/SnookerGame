@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7jnsdbr72d4r"]
+[gd_scene load_steps=3 format=3 uid="uid://c7jnsdbr72d4r"]
 
 [ext_resource type="Script" uid="uid://bq4is63kv4oge" path="res://Scripts/main_game_ui.gd" id="1_mx1e2"]
+[ext_resource type="PackedScene" uid="uid://gftmt6w1egb8" path="res://Scenes/total_money_label.tscn" id="2_h4c50"]
 
 [node name="MainGameUI" type="Control"]
 layout_mode = 3
@@ -11,10 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mx1e2")
 
-[node name="MoneyTimer" type="Label" parent="."]
+[node name="TotalMoneyLabel" parent="." instance=ExtResource("2_h4c50")]
 layout_mode = 0
-offset_left = 937.0
-offset_top = 17.0
-offset_right = 1009.0
-offset_bottom = 40.0
-text = "Money: X"
+offset_left = 1009.0
+offset_top = 46.0
+offset_right = 1081.0
+offset_bottom = 69.0

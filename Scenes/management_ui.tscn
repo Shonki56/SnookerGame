@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://l21wlpf67qic"]
+[gd_scene load_steps=4 format=3 uid="uid://l21wlpf67qic"]
 
 [ext_resource type="Script" uid="uid://datx54d22v5fr" path="res://Scripts/management_ui.gd" id="1_xbxjl"]
 [ext_resource type="Script" uid="uid://d3jwbs1ecxouj" path="res://Scripts/tables_shop.gd" id="2_2veev"]
+[ext_resource type="PackedScene" uid="uid://gftmt6w1egb8" path="res://Scenes/total_money_label.tscn" id="2_lem1w"]
 
 [node name="ManagementUI" type="Control"]
 layout_mode = 3
@@ -25,13 +26,8 @@ offset_top = 6.0
 offset_right = 1129.0
 offset_bottom = 388.0
 
-[node name="TotalMoneyLabel" type="Label" parent="."]
+[node name="TotalMoneyLabel" parent="." instance=ExtResource("2_lem1w")]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 22.0
-offset_right = 100.0
-offset_bottom = 45.0
-text = "Money: X"
 
 [node name="TablesShop" type="BoxContainer" parent="."]
 layout_mode = 0

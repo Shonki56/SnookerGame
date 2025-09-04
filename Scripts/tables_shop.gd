@@ -16,7 +16,6 @@ func _ready() -> void:
 func buyBadTable():
 	if Globals.total_money >= Globals.tablePrices["Bad"] and Globals.numberOfTables < Globals.maxTablesCount:
 		Globals.total_money -= Globals.tablePrices["Bad"]
-		Globals.updateMoneyLabelsFunction()
 		var newTable = snookerTable.instantiate()
 		newTable.tableQuality = Globals.tableQuality.BAD
 		newTable.tablePricePerHour = 10.0
@@ -28,7 +27,6 @@ func buyBadTable():
 func buyGoodTable():
 	if Globals.total_money >= Globals.tablePrices["Good"] and Globals.numberOfTables < Globals.maxTablesCount:
 		Globals.total_money -= Globals.tablePrices["Good"]
-		Globals.updateMoneyLabelsFunction()
 		var newTable = snookerTable.instantiate()
 		newTable.tableQuality = Globals.tableQuality.GOOD
 		newTable.tablePricePerHour = 50.0
@@ -40,7 +38,6 @@ func buyGoodTable():
 func buyProTable():
 	if Globals.total_money >= Globals.tablePrices["Pro"] and Globals.numberOfTables < Globals.maxTablesCount:
 		Globals.total_money -= Globals.tablePrices["Pro"]
-		Globals.updateMoneyLabelsFunction()
 		var newTable = snookerTable.instantiate()
 		newTable.tableQuality = Globals.tableQuality.PRO
 		newTable.tablePricePerHour = 100.0
