@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="singletonTest"
+config/name="SnookerGame"
 run/main_scene="uid://cr7f3unpjbh4r"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
