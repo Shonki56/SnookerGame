@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7jnsdbr72d4r"]
+
+[ext_resource type="Script" uid="uid://bq4is63kv4oge" path="res://Scripts/main_game_ui.gd" id="1_mx1e2"]
+[ext_resource type="PackedScene" uid="uid://dkaqk6b8h6e6" path="res://Scenes/UI/pop_up.tscn" id="3_pivgy"]
+[ext_resource type="PackedScene" uid="uid://cufsm2hv7bmjg" path="res://Scenes/UI/TimeDisplay.tscn" id="4_qvsw1"]
+[ext_resource type="Script" uid="uid://c38ny8regpo1j" path="res://Scripts/time_system.gd" id="5_1ldub"]
+[ext_resource type="Script" uid="uid://iyw4e0jthxl6" path="res://Scripts/date_time.gd" id="6_6h0dc"]
+
+[sub_resource type="Resource" id="Resource_qjra3"]
+script = ExtResource("6_6h0dc")
+seconds = 0
+minutes = 0
+hours = 0
+days = 0
+metadata/_custom_type_script = "uid://iyw4e0jthxl6"
+
+[node name="MainGameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mx1e2")
+
+[node name="PopUp" parent="." instance=ExtResource("3_pivgy")]
+
+[node name="TimeGUI" parent="PopUp" instance=ExtResource("4_qvsw1")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -208.0
+offset_top = 16.0
+offset_right = -126.0
+offset_bottom = 77.0
+grow_horizontal = 0
+scale = Vector2(2.53816, 2.53816)
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("5_1ldub")
+date_time = SubResource("Resource_qjra3")
+metadata/_custom_type_script = "uid://c38ny8regpo1j"
+
+[connection signal="updated" from="TimeSystem" to="PopUp/TimeGUI" method="_on_time_system_updated"]

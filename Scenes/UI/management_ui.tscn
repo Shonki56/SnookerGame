@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://datx54d22v5fr" path="res://Scripts/management_ui.gd" id="1_xbxjl"]
 [ext_resource type="Script" uid="uid://d3jwbs1ecxouj" path="res://Scripts/tables_shop.gd" id="2_2veev"]
-[ext_resource type="PackedScene" uid="uid://gftmt6w1egb8" path="res://Scenes/total_money_label.tscn" id="2_lem1w"]
+[ext_resource type="PackedScene" uid="uid://gftmt6w1egb8" path="res://Scenes/UI/total_money_label.tscn" id="2_lem1w"]
 [ext_resource type="Script" uid="uid://bp52euxfkp0of" path="res://Scripts/basic_table.gd" id="4_yruj5"]
 [ext_resource type="Script" uid="uid://1pd0cf2bdop8" path="res://Scripts/club_table.gd" id="5_6mpwi"]
 [ext_resource type="Script" uid="uid://brm0yahd0wnur" path="res://Scripts/pro_table.gd" id="6_5gwgr"]

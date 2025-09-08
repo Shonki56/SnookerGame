@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl8f1awr22wwc"]
+
+[ext_resource type="Texture2D" uid="uid://c7hpvelyl8m65" path="res://Assets/MainHallAssets/BarVersion1.png" id="1_vwav4"]
+
+[node name="Bar" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 5.42101e-20)
+scale = Vector2(5.875, 5.875)
+texture = ExtResource("1_vwav4")
+offset = Vector2(5.44681, 1.54808e-13)

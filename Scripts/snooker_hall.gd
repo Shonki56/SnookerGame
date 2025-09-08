@@ -2,7 +2,7 @@ extends Node2D
 @onready var tables: Node = $Tables
 @onready var management_ui: Control = $ManagementUI
 
-var snookerTable = preload("res://Scenes/snooker_table.tscn")
+var snookerTable = preload("res://Scenes/SnookerHall/snooker_table.tscn")
 
 func _ready():
 	createTables()

@@ -1,6 +1,6 @@
 extends BoxContainer
 
-var snookerTable = preload("res://Scenes/snooker_table.tscn")
+var snookerTable = preload("res://Scenes/SnookerHall/snooker_table.tscn")
 
 func buyTable(tableType):
 	# Do some checking to make sure tableType is correct
