@@ -15,6 +15,8 @@ var currentSessionPrice = 0
 
 var payTimerHourInSeconds = 10.0
 
+var tableQualityString: String
+
 func turnTableOnOrOff():
 	if color_rect.color == Color.WHITE:
 		color_rect.color = Color.GREEN

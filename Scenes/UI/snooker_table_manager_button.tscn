@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dopij0wah24k"]
+[gd_scene load_steps=5 format=3 uid="uid://dopij0wah24k"]
 
 [ext_resource type="Script" uid="uid://bf1qu1jcjfb5" path="res://Scripts/UI/TableManager/snooker_table_manager_button.gd" id="1_jcuwd"]
 [ext_resource type="Script" uid="uid://bjotyu574dxdn" path="res://Scripts/UI/TableManager/turn_on_off.gd" id="2_maolu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcuwd"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_maolu"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
 [node name="SnookerTableManagerButton" type="Control"]
 custom_minimum_size = Vector2(133, 180)
@@ -22,11 +26,11 @@ scale = Vector2(0.588074, 0.612019)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 113.0
-offset_right = 218.0
-offset_bottom = 214.0
-scale = Vector2(0.590704, 0.64479)
+offset_left = 12.0
+offset_top = 126.0
+offset_right = 229.0
+offset_bottom = 227.0
+scale = Vector2(0.468006, 0.483854)
 
 [node name="TurnOnOff" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -43,10 +47,10 @@ text = "Sell"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 16.0
-offset_right = 135.0
-offset_bottom = 165.0
+offset_left = 35.0
+offset_top = 30.0
+offset_right = 130.0
+offset_bottom = 179.0
 scale = Vector2(0.588074, 0.612019)
 color = Color(0.188824, 0.862662, 0.434706, 1)
 
@@ -59,5 +63,15 @@ offset_bottom = 98.4823
 scale = Vector2(1.18764, 1.24426)
 text = "99"
 label_settings = SubResource("LabelSettings_jcuwd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TableQualityLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(3.25227, 1.30665)
+text = "Quality"
+label_settings = SubResource("LabelSettings_maolu")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -10,6 +10,7 @@ func buyTable(tableType):
 		var newTable = snookerTable.instantiate()
 		newTable.tableQuality = tableToBuy["quality"]
 		newTable.tablePricePerHour = tableToBuy["pricePerHour"]
+		newTable.tableQualityString = tableToBuy["qualityString"]
 		Globals.updateTablesArrayAndNumOfTables(newTable)
 		Globals.tableBeingBought = newTable
 		Globals.boughtNewTable.emit()
