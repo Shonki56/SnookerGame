@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dopij0wah24k"]
+
+[ext_resource type="Script" uid="uid://bf1qu1jcjfb5" path="res://Scripts/UI/TableManager/snooker_table_manager_button.gd" id="1_jcuwd"]
+[ext_resource type="Script" uid="uid://bjotyu574dxdn" path="res://Scripts/UI/TableManager/turn_on_off.gd" id="2_maolu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jcuwd"]
+font_size = 32
+
+[node name="SnookerTableManagerButton" type="Control"]
+custom_minimum_size = Vector2(133, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 131.0
+offset_bottom = 180.0
+script = ExtResource("1_jcuwd")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 295.0
+scale = Vector2(0.588074, 0.612019)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 113.0
+offset_right = 218.0
+offset_bottom = 214.0
+scale = Vector2(0.590704, 0.64479)
+
+[node name="TurnOnOff" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Turn on/off"
+script = ExtResource("2_maolu")
+
+[node name="CleanTable" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Clean"
+
+[node name="SellTable" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sell"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 135.0
+offset_bottom = 165.0
+scale = Vector2(0.588074, 0.612019)
+color = Color(0.188824, 0.862662, 0.434706, 1)
+
+[node name="TableNumber" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 22.1061
+offset_top = 42.4823
+offset_right = 62.1061
+offset_bottom = 98.4823
+scale = Vector2(1.18764, 1.24426)
+text = "99"
+label_settings = SubResource("LabelSettings_jcuwd")
+horizontal_alignment = 1
+vertical_alignment = 1

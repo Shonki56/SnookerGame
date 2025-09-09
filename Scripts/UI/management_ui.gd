@@ -1,9 +1,13 @@
 extends Control
 @onready var v_box_container: VBoxContainer = $TurnTablesOnOffBox
+@onready var h_box_container: GridContainer = $HBoxContainer
+
+var tableManager = preload("res://Scenes/UI/snooker_table_manager_button.tscn")
 
 func _ready() -> void:
 	createButtons()
-	Globals.updateTableButtonsArray.connect(createButtonForNewTablesBeingAdded)
+	Globals.updateTableButtonsArray.connect(createCustomTableManager)
+	#Globals.updateTableButtonsArray.connect(createButtonForNewTablesBeingAdded)
 	
 
 func _input(event):
@@ -59,5 +63,14 @@ func createButtonForNewTablesBeingAdded():
 func createButtons():
 	for i in range(Globals.numberOfTables):
 		createSingleButton(i)
+		
+func createCustomTableManager():
+	var newManager = tableManager.instantiate()
+	h_box_container.add_child(newManager)
+	print_debug("Number of tables: " + str(Globals.numberOfTables))
+	newManager.tableNumberForButtonsID = Globals.numberOfTables - 1
+	print_debug("TableManagerID: " + str(newManager.tableNumberForButtonsID))
+	
+	
 
 		

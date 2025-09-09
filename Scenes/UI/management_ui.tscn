@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://l21wlpf67qic"]
+[gd_scene load_steps=9 format=3 uid="uid://l21wlpf67qic"]
 
-[ext_resource type="Script" uid="uid://datx54d22v5fr" path="res://Scripts/management_ui.gd" id="1_xbxjl"]
-[ext_resource type="Script" uid="uid://d3jwbs1ecxouj" path="res://Scripts/tables_shop.gd" id="2_2veev"]
-[ext_resource type="PackedScene" uid="uid://gftmt6w1egb8" path="res://Scenes/UI/total_money_label.tscn" id="2_lem1w"]
-[ext_resource type="Script" uid="uid://bp52euxfkp0of" path="res://Scripts/basic_table.gd" id="4_yruj5"]
-[ext_resource type="Script" uid="uid://1pd0cf2bdop8" path="res://Scripts/club_table.gd" id="5_6mpwi"]
-[ext_resource type="Script" uid="uid://brm0yahd0wnur" path="res://Scripts/pro_table.gd" id="6_5gwgr"]
+[ext_resource type="Script" uid="uid://datx54d22v5fr" path="res://Scripts/UI/management_ui.gd" id="1_xbxjl"]
+[ext_resource type="Script" uid="uid://d3jwbs1ecxouj" path="res://Scripts/UI/tables_shop.gd" id="2_2veev"]
+[ext_resource type="Script" uid="uid://bp52euxfkp0of" path="res://Scripts/MainGame/basic_table.gd" id="4_yruj5"]
+[ext_resource type="Script" uid="uid://1pd0cf2bdop8" path="res://Scripts/MainGame/club_table.gd" id="5_6mpwi"]
+[ext_resource type="Script" uid="uid://brm0yahd0wnur" path="res://Scripts/MainGame/pro_table.gd" id="6_5gwgr"]
+[ext_resource type="PackedScene" uid="uid://cufsm2hv7bmjg" path="res://Scenes/UI/TimeDisplay.tscn" id="6_i3j4x"]
+[ext_resource type="Script" uid="uid://c38ny8regpo1j" path="res://Scripts/UI/TimeStuff/time_system.gd" id="7_pr862"]
+[ext_resource type="Resource" uid="uid://hw1tsdn1h7s7" path="res://game_time.tres" id="8_evtuh"]
 
 [node name="ManagementUI" type="Control"]
 layout_mode = 3
@@ -24,17 +26,10 @@ color = Color(0.477274, 0.428652, 0.91569, 1)
 
 [node name="TurnTablesOnOffBox" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 783.0
-offset_top = 6.0
-offset_right = 1129.0
-offset_bottom = 388.0
-
-[node name="TotalMoneyLabel" parent="." instance=ExtResource("2_lem1w")]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 72.0
-offset_bottom = 23.0
+offset_left = 497.0
+offset_top = 7.0
+offset_right = 1152.0
+offset_bottom = 389.0
 
 [node name="TablesShop" type="BoxContainer" parent="."]
 layout_mode = 0
@@ -62,3 +57,25 @@ layout_mode = 2
 text = "Pro Table
 "
 script = ExtResource("6_5gwgr")
+
+[node name="TimeGUI" parent="." instance=ExtResource("6_i3j4x")]
+offset_left = 21.0
+offset_top = 338.0
+offset_right = 101.0
+offset_bottom = 394.0
+scale = Vector2(5.57582, 5.57582)
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("7_pr862")
+date_time = ExtResource("8_evtuh")
+metadata/_custom_type_script = "uid://c38ny8regpo1j"
+
+[node name="HBoxContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 647.0
+offset_bottom = 331.0
+columns = 4
+
+[connection signal="updated" from="TimeSystem" to="TimeGUI" method="_on_time_system_updated"]

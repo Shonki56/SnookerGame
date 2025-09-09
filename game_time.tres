@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DateTime" load_steps=2 format=3 uid="uid://hw1tsdn1h7s7"]
+
+[ext_resource type="Script" uid="uid://iyw4e0jthxl6" path="res://Scripts/UI/TimeStuff/date_time.gd" id="1_xisf8"]
+
+[resource]
+script = ExtResource("1_xisf8")
+seconds = 0
+minutes = 0
+hours = 0
+days = 0
+metadata/_custom_type_script = "uid://iyw4e0jthxl6"

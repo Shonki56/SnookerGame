@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gftmt6w1egb8"]
 
 [ext_resource type="LabelSettings" uid="uid://di4ramhgys0h6" path="res://label_settings.tres" id="1_cj53j"]
-[ext_resource type="Script" uid="uid://bs51jfxal4hf7" path="res://Scripts/total_money_label.gd" id="1_tffud"]
+[ext_resource type="Script" uid="uid://bs51jfxal4hf7" path="res://Scripts/UI/total_money_label.gd" id="1_tffud"]
 
 [node name="TotalMoneyLabel" type="Label"]
 offset_left = 28.0
