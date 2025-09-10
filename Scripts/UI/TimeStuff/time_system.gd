@@ -9,6 +9,7 @@ signal updated
 func _process(delta: float) -> void:
 		date_time.increase_by_sec(delta * ticks_per_seconds)
 		updated.emit(date_time)
+		Globals.currentTime = date_time
 		
 
 	

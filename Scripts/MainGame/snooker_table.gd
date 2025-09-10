@@ -3,10 +3,12 @@ extends Node2D
 @onready var pay_timer: Timer = $PayTimer
 @export var tableQuality: Globals.tableQuality
 @export var tablePricePerHour: float
+@onready var time_system: TimeSystem = $TimeSystem
 
 
 func _ready() -> void:
 	pay_timer.timeout.connect(payForFullHour)
+	print(str(Globals.currentTime.minutes))
 
 
 var isTableBeingUsed = false
@@ -17,17 +19,40 @@ var payTimerHourInSeconds = 10.0
 
 var tableQualityString: String
 
+var timeOnStart
+var timeOnEnd
+var totalTimeTableWasOn
+
+func setTimeOnStart():
+	timeOnStart = Globals.currentTime.duplicate()
+	print_debug(str(timeOnStart.hours) + ":" + str(timeOnStart.minutes))
+	
+func setTimeEnd():
+	timeOnEnd = Globals.currentTime.duplicate()
+	print_debug(str(timeOnEnd.hours) + ":" + str(timeOnEnd.minutes))
+	
+func calculateTotalTimeTableWasOn():
+	var totalHours = timeOnEnd.hours - timeOnStart.hours
+	var totalMinutes = timeOnEnd.minutes - timeOnStart.minutes
+	print("Total minutes table was on:" + str(totalMinutes))
+
 func turnTableOnOrOff():
 	if color_rect.color == Color.WHITE:
 		color_rect.color = Color.GREEN
+		setTimeOnStart()
 	else:
 		color_rect.color = Color.WHITE
-	isTableBeingUsed = !isTableBeingUsed
-	pauseOrPlayTimerAndPayMoney(pay_timer)
+		isTableBeingUsed = !isTableBeingUsed
+		pauseOrPlayTimerAndPayMoney(pay_timer)
+		setTimeEnd()
+		calculateTotalTimeTableWasOn()
+		
+func calculatePriceForTableUse():
+	#TODO Do this
+	pass
 	
 func payForFullHour():
 	currentSessionPrice += tablePricePerHour
-	print(str(tablePricePerHour) + " has been added")
 	
 func payForIncompleteHour():
 	var incompleteTableMultiplier = tablePricePerHour / payTimerHourInSeconds

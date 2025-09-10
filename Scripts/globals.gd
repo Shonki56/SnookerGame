@@ -10,6 +10,8 @@ func updateTablesArrayAndNumOfTables(table):
 	
 var tableBeingBought
 
+var currentTime: DateTime
+
 var numberOfTables = 0
 var tablesArray = []
 var buttonsArray = []
