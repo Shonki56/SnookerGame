@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://b6lg7vaixx8q2" path="res://Scripts/UI/pop_up.gd" id="1_81u6v"]
 
 [node name="PopUp" type="CanvasLayer"]
+layer = 11
 script = ExtResource("1_81u6v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = 11
 offset_left = 6.0
 offset_top = 599.0
 offset_right = 307.0

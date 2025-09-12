@@ -34,6 +34,7 @@ func turnTableOnOrOff():
 		calculatePriceForTableUse()
 		addMoneyAndResetCurrentSessionAmount()
 		
+		
 func calculatePriceForTableUse():
 	var totalHours = timeOnEnd.hours - timeOnStart.hours
 	var totalMinutes = timeOnEnd.minutes - timeOnStart.minutes 
@@ -43,7 +44,12 @@ func calculatePriceForTableUse():
 	
 func addMoneyAndResetCurrentSessionAmount():
 	Globals.total_money += currentSessionPrice
+	showPopUpForMoneyMade()
 	currentSessionPrice = 0
 	
 func payForFullHour():
 	currentSessionPrice += tablePricePerHour
+	
+func showPopUpForMoneyMade():
+	Globals.currentPopUpMessage = str(currentSessionPrice).pad_decimals(2)
+	Globals.showPopUp.emit()
