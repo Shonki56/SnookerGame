@@ -8,6 +8,9 @@ extends Control
 func _ready() -> void:
 	tableNumberForButtonsID = Globals.numberOfTablesBoughtOverall
 	table_number.text = str(Globals.numberOfTables)
+	for table in Globals.tablesArray:
+		if table.tableID == tableNumberForButtonsID:
+			table_quality_label.text = table.tableQualityString
 	#if Globals.numberOfTables == 0:
 			#table_quality_label.text = Globals.tablesArray[Globals.numberOfTables].tableQualityString
 	#else:

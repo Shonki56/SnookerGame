@@ -14,8 +14,8 @@ func buyTable(tableType):
 		Globals.updateTablesArrayAndNumOfTables(newTable)
 		Globals.tableBeingBought = newTable
 		Globals.boughtNewTable.emit()
-		Globals.updateTableButtonsArray.emit()
 		newTable.tableID = Globals.numberOfTablesBoughtOverall
+		Globals.updateTableButtonsArray.emit()
 		print_debug("This tables ID is: " + str(newTable.tableID))
 	elif Globals.total_money < tableToBuy["priceToBuy"]:
 		Globals.currentPopUpMessage = Globals.popUpMessages["NotEnoughMoney"]
