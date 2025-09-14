@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://gftmt6w1egb8"]
+[gd_scene load_steps=4 format=3 uid="uid://gftmt6w1egb8"]
 
-[ext_resource type="LabelSettings" uid="uid://di4ramhgys0h6" path="res://label_settings.tres" id="1_cj53j"]
+[ext_resource type="FontFile" uid="uid://3ouq8tas1sne" path="res://Assets/Fonts/Kenney Mini Square.ttf" id="1_cj53j"]
 [ext_resource type="Script" uid="uid://bs51jfxal4hf7" path="res://Scripts/UI/total_money_label.gd" id="1_tffud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61yk3"]
+font = ExtResource("1_cj53j")
 
 [node name="TotalMoneyLabel" type="Label"]
 offset_left = 28.0
@@ -9,5 +12,9 @@ offset_top = 22.0
 offset_right = 100.0
 offset_bottom = 45.0
 text = "$ XXXX"
-label_settings = ExtResource("1_cj53j")
+label_settings = SubResource("LabelSettings_61yk3")
 script = ExtResource("1_tffud")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
