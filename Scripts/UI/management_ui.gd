@@ -67,7 +67,9 @@ func createButtons():
 func createCustomTableManager():
 	var newManager = tableManager.instantiate()
 	h_box_container.add_child(newManager)
-	newManager.tableNumberForButtonsID = Globals.numberOfTables - 1
+	newManager.tableNumberForButtonsID = Globals.numberOfTablesBoughtOverall
+	Globals.buttonsArray.append(newManager)
+	print_debug("New table being boughts ID: " + str(newManager.tableNumberForButtonsID))
 	
 	
 

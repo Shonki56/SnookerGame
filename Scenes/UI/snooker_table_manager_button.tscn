@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dopij0wah24k"]
+[gd_scene load_steps=6 format=3 uid="uid://dopij0wah24k"]
 
 [ext_resource type="Script" uid="uid://bf1qu1jcjfb5" path="res://Scripts/UI/TableManager/snooker_table_manager_button.gd" id="1_jcuwd"]
 [ext_resource type="Script" uid="uid://bjotyu574dxdn" path="res://Scripts/UI/TableManager/turn_on_off.gd" id="2_maolu"]
+[ext_resource type="Script" uid="uid://bh0ik17p2sowv" path="res://Scenes/UI/sell_table.gd" id="3_8c6aw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcuwd"]
 font_size = 32
@@ -44,6 +45,7 @@ text = "Clean"
 [node name="SellTable" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Sell"
+script = ExtResource("3_8c6aw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

@@ -7,10 +7,18 @@ signal showPopUp
 func updateTablesArrayAndNumOfTables(table):
 	tablesArray.append(table)
 	numberOfTables += 1
+	numberOfTablesBoughtOverall += 1
+	
+func deleteFromTablesArrayAndButtonsArray(tableAndButtonId: int):
+	tablesArray.pop_at(tableAndButtonId) # Using wrong number to get ID. Using global ID rather than the actual array index
+	buttonsArray.pop_at(tableAndButtonId)
+	numberOfTables -= 1
 	
 var tableBeingBought
 
 var currentTime: DateTime
+
+var numberOfTablesBoughtOverall = 0
 
 var numberOfTables = 0
 var tablesArray = []
