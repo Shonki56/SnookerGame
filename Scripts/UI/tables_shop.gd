@@ -8,21 +8,29 @@ func buyTable(tableType):
 	if Globals.total_money >= tableToBuy["priceToBuy"] and Globals.numberOfTables < Globals.maxTablesCount:
 		Globals.total_money -= tableToBuy["priceToBuy"]
 		var newTable = snookerTable.instantiate()
-		newTable.tableQuality = tableToBuy["quality"]
-		newTable.tablePricePerHour = tableToBuy["pricePerHour"]
-		newTable.tableQualityString = tableToBuy["qualityString"]
-		Globals.updateTablesArrayAndNumOfTables(newTable)
-		Globals.tableBeingBought = newTable
-		Globals.boughtNewTable.emit()
-		newTable.tableID = Globals.numberOfTablesBoughtOverall
-		Globals.updateTableButtonsArray.emit()
-		print_debug("This tables ID is: " + str(newTable.tableID))
+		setTableStats(newTable, tableToBuy)
+		updateGlobalVarsAndEmitSignals(newTable)
 	elif Globals.total_money < tableToBuy["priceToBuy"]:
-		Globals.currentPopUpMessage = Globals.popUpMessages["NotEnoughMoney"]
-		Globals.showPopUp.emit()
+		setPoPUpMessage(Globals.popUpMessages["NotEnoughMoney"])
 	elif Globals.numberOfTables == 8:
-		Globals.currentPopUpMessage = Globals.popUpMessages["TooManyTables"]
-		Globals.showPopUp.emit()
+		setPoPUpMessage(Globals.popUpMessages["TooManyTables"])
+		
+func setTableStats(table, stats):
+	table.tableQuality = stats["quality"]
+	table.tablePricePerHour = stats["pricePerHour"]
+	table.tableQualityString = stats["qualityString"]
+	
+func updateGlobalVarsAndEmitSignals(table):
+	Globals.updateTablesArrayAndNumOfTables(table)
+	Globals.tableBeingBought = table
+	Globals.boughtNewTable.emit()
+	table.tableID = Globals.numberOfTablesBoughtOverall
+	Globals.updateTableButtonsArray.emit()
+	
+func setPoPUpMessage(message):
+	Globals.currentPopUpMessage = message
+	Globals.showPopUp.emit()
+	
 		
 		
 	

@@ -7,8 +7,6 @@ extends Node2D
 @onready var tableID: int
 var isTableBeingUsed = false
 
-
-
 var currentSessionPrice = 0
 
 var tableQualityString: String
@@ -48,9 +46,6 @@ func addMoneyAndResetCurrentSessionAmount():
 	Globals.total_money += currentSessionPrice
 	showPopUpForMoneyMade()
 	currentSessionPrice = 0
-	
-func payForFullHour():
-	currentSessionPrice += tablePricePerHour
 	
 func showPopUpForMoneyMade():
 	Globals.currentPopUpMessage = str(currentSessionPrice).pad_decimals(2)

@@ -11,8 +11,4 @@ func _ready() -> void:
 	for table in Globals.tablesArray:
 		if table.tableID == tableNumberForButtonsID:
 			table_quality_label.text = table.tableQualityString
-	#if Globals.numberOfTables == 0:
-			#table_quality_label.text = Globals.tablesArray[Globals.numberOfTables].tableQualityString
-	#else:
-			#table_quality_label.text = Globals.tablesArray[Globals.numberOfTables 	- 1].tableQualityString
 		
