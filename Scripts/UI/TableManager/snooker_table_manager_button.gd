@@ -4,6 +4,7 @@ extends Control
 
 @export var tableNumberForButtonsID: int
 
+
 func _ready() -> void:
 	tableNumberForButtonsID = Globals.numberOfTablesBoughtOverall
 	table_number.text = str(Globals.numberOfTables)
@@ -11,3 +12,4 @@ func _ready() -> void:
 			#table_quality_label.text = Globals.tablesArray[Globals.numberOfTables].tableQualityString
 	#else:
 			#table_quality_label.text = Globals.tablesArray[Globals.numberOfTables 	- 1].tableQualityString
+		

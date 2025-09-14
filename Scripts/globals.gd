@@ -10,9 +10,13 @@ func updateTablesArrayAndNumOfTables(table):
 	numberOfTablesBoughtOverall += 1
 	
 func deleteFromTablesArrayAndButtonsArray(tableAndButtonId: int):
-	tablesArray.pop_at(tableAndButtonId) # Using wrong number to get ID. Using global ID rather than the actual array index
+	tablesArray.pop_at(tableAndButtonId) 
 	buttonsArray.pop_at(tableAndButtonId)
 	numberOfTables -= 1
+	
+func updateTableLabelNumbers():
+	for i in range(buttonsArray.size()):
+		buttonsArray[i].table_number.text = str(i + 1)
 	
 var tableBeingBought
 

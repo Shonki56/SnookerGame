@@ -10,6 +10,5 @@ func deleteTableAndButton():
 			Globals.tablesArray[i].sellTable()
 			Globals.deleteFromTablesArrayAndButtonsArray(i)
 			snooker_table_manager_button.queue_free()
+			Globals.updateTableLabelNumbers()
 			break
-	
-		
