@@ -29,7 +29,6 @@ func turnTableOnOrOff():
 	else:
 		isTableBeingUsed = false
 		color_rect.color = Color.WHITE
-		isTableBeingUsed = !isTableBeingUsed
 		setTimeEnd()
 		calculatePriceForTableUse()
 		addMoneyAndResetCurrentSessionAmount()

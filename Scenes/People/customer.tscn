@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://te32udsmqu0c"]
+
+[ext_resource type="Script" uid="uid://ddfni20ik2qxy" path="res://Scripts/People/customer.gd" id="1_ouomj"]
+[ext_resource type="PackedScene" uid="uid://df0qn713b5jhp" path="res://Scenes/UI/customer_dialogue.tscn" id="2_modj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f6xm"]
+size = Vector2(22, 41)
+
+[node name="Customer" type="Node2D"]
+script = ExtResource("1_ouomj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 21.0
+offset_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11, 20.5)
+shape = SubResource("RectangleShape2D_4f6xm")
+
+[node name="CustomerDialogue" parent="." instance=ExtResource("2_modj5")]
+visible = false
+offset_left = 35.0
+offset_top = -46.0
+offset_right = 35.0
+offset_bottom = -46.0
+scale = Vector2(0.508996, 0.508996)

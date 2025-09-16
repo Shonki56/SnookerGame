@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr7f3unpjbh4r"]
+[gd_scene load_steps=10 format=3 uid="uid://cr7f3unpjbh4r"]
 
 [ext_resource type="Script" uid="uid://82mbnf1obp67" path="res://Scripts/MainGame/snooker_hall.gd" id="1_uvt8v"]
 [ext_resource type="Texture2D" uid="uid://xq01dva5dq72" path="res://Assets/Tilesets/Tilesheets/roguelikeIndoor_transparent.png" id="2_r841k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c7jnsdbr72d4r" path="res://Scenes/UI/main_game_ui.tscn" id="4_g2b0j"]
 [ext_resource type="PackedScene" uid="uid://l21wlpf67qic" path="res://Scenes/UI/management_ui.tscn" id="5_ok22k"]
 [ext_resource type="PackedScene" uid="uid://bl8f1awr22wwc" path="res://Scenes/SnookerHall/bar.tscn" id="6_s1pno"]
+[ext_resource type="PackedScene" uid="uid://te32udsmqu0c" path="res://Scenes/People/customer.tscn" id="7_3nhge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sjwqj"]
 texture = ExtResource("2_r841k")
@@ -573,3 +574,6 @@ offset_bottom = -12.0
 
 [node name="Bar" parent="." instance=ExtResource("6_s1pno")]
 position = Vector2(160, 145)
+
+[node name="Customer" parent="." instance=ExtResource("7_3nhge")]
+position = Vector2(-33, 106)

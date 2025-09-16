@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpexlth1ph6al"]
+
+[ext_resource type="Script" uid="uid://ds1v8gxulpc23" path="res://Scripts/UI/table_count.gd" id="1_7q3rj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pr862"]
+font_size = 32
+font_color = Color(0.250347, 0.673949, 0.81602, 1)
+
+[node name="TableCount" type="Label"]
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 60.0
+offset_bottom = 38.0
+text = "X/X"
+label_settings = SubResource("LabelSettings_pr862")
+script = ExtResource("1_7q3rj")

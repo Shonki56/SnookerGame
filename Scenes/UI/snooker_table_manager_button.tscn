@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bf1qu1jcjfb5" path="res://Scripts/UI/TableManager/snooker_table_manager_button.gd" id="1_jcuwd"]
 [ext_resource type="Script" uid="uid://bjotyu574dxdn" path="res://Scripts/UI/TableManager/turn_on_off.gd" id="2_maolu"]
-[ext_resource type="Script" uid="uid://bh0ik17p2sowv" path="res://Scenes/UI/sell_table.gd" id="3_8c6aw"]
-[ext_resource type="Script" uid="uid://bx5ihh6phu54f" path="res://Scenes/UI/table_number_label.gd" id="4_wu2fr"]
+[ext_resource type="Script" uid="uid://bh0ik17p2sowv" path="res://Scripts/UI/TableManager/sell_table.gd" id="3_8c6aw"]
+[ext_resource type="Script" uid="uid://bx5ihh6phu54f" path="res://Scripts/UI/table_number_label.gd" id="4_wu2fr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcuwd"]
 font_size = 32

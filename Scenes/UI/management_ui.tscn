@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://l21wlpf67qic"]
+[gd_scene load_steps=11 format=3 uid="uid://l21wlpf67qic"]
 
 [ext_resource type="Script" uid="uid://datx54d22v5fr" path="res://Scripts/UI/management_ui.gd" id="1_xbxjl"]
 [ext_resource type="Script" uid="uid://d3jwbs1ecxouj" path="res://Scripts/UI/tables_shop.gd" id="2_2veev"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cufsm2hv7bmjg" path="res://Scenes/UI/TimeDisplay.tscn" id="6_i3j4x"]
 [ext_resource type="Script" uid="uid://c38ny8regpo1j" path="res://Scripts/UI/TimeStuff/time_system.gd" id="7_pr862"]
 [ext_resource type="Resource" uid="uid://hw1tsdn1h7s7" path="res://game_time.tres" id="8_evtuh"]
+[ext_resource type="PackedScene" uid="uid://bpexlth1ph6al" path="res://Scenes/UI/table_count.tscn" id="9_xw66x"]
+[ext_resource type="PackedScene" uid="uid://dkaqk6b8h6e6" path="res://Scenes/UI/pop_up.tscn" id="10_xw66x"]
 
 [node name="ManagementUI" type="Control"]
 layout_mode = 3
@@ -59,11 +61,11 @@ text = "Pro Table
 script = ExtResource("6_5gwgr")
 
 [node name="TimeGUI" parent="." instance=ExtResource("6_i3j4x")]
-offset_left = 21.0
-offset_top = 338.0
-offset_right = 101.0
-offset_bottom = 394.0
-scale = Vector2(5.57582, 5.57582)
+offset_left = 18.0
+offset_top = 492.0
+offset_right = 98.0
+offset_bottom = 548.0
+scale = Vector2(2.85688, 2.85688)
 
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("7_pr862")
@@ -72,10 +74,19 @@ metadata/_custom_type_script = "uid://c38ny8regpo1j"
 
 [node name="HBoxContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 2.0
-offset_right = 647.0
-offset_bottom = 331.0
+offset_left = 14.0
+offset_top = 66.0
+offset_right = 656.0
+offset_bottom = 395.0
 columns = 4
+
+[node name="TableCount" parent="." instance=ExtResource("9_xw66x")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PopUp" parent="." instance=ExtResource("10_xw66x")]
 
 [connection signal="updated" from="TimeSystem" to="TimeGUI" method="_on_time_system_updated"]
