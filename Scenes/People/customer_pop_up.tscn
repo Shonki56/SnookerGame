@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4et7y51pc4qo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_modj5"]
+font_size = 32
+font_color = Color(0.754675, 0.0381774, 0.021232, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_modj5"]
+size = Vector2(41.486, 41.486)
+
+[node name="CustomerPopUp" type="Area2D"]
+scale = Vector2(0.444643, 0.444643)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 13.494
+offset_top = -2.24899
+offset_right = 22.494
+offset_bottom = 42.751
+text = "!"
+label_settings = SubResource("LabelSettings_modj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19.739, 19.739)
+shape = SubResource("RectangleShape2D_modj5")

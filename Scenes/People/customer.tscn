@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://te32udsmqu0c"]
+[gd_scene load_steps=5 format=3 uid="uid://te32udsmqu0c"]
 
 [ext_resource type="Script" uid="uid://ddfni20ik2qxy" path="res://Scripts/People/customer.gd" id="1_ouomj"]
 [ext_resource type="PackedScene" uid="uid://df0qn713b5jhp" path="res://Scenes/UI/customer_dialogue.tscn" id="2_modj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f6xm"]
 size = Vector2(22, 41)
+
+[sub_resource type="LabelSettings" id="LabelSettings_modj5"]
+font_size = 32
+font_color = Color(0.754675, 0.0381774, 0.021232, 1)
 
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_ouomj")
@@ -20,9 +24,21 @@ position = Vector2(11, 20.5)
 shape = SubResource("RectangleShape2D_4f6xm")
 
 [node name="CustomerDialogue" parent="." instance=ExtResource("2_modj5")]
+
+[node name="CustomerPopUp" type="Button" parent="."]
 visible = false
-offset_left = 35.0
-offset_top = -46.0
-offset_right = 35.0
-offset_bottom = -46.0
-scale = Vector2(0.508996, 0.508996)
+offset_top = -24.0
+offset_right = 40.0
+offset_bottom = 16.0
+scale = Vector2(0.444643, 0.444643)
+
+[node name="Label" type="Label" parent="CustomerPopUp"]
+layout_mode = 0
+offset_left = 13.494
+offset_top = -2.24899
+offset_right = 22.494
+offset_bottom = 42.751
+text = "!"
+label_settings = SubResource("LabelSettings_modj5")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

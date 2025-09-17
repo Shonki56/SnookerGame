@@ -28,7 +28,7 @@ var numberOfTables = 0
 var tablesArray = []
 var buttonsArray = []
 var moneyLabelsArray = []
-var tablePositionsArray = [Vector2(-1125, 102), Vector2(-861, 102), Vector2(-597, 102), Vector2(-333, 102), Vector2(-1125, 422), Vector2(-861, 422), Vector2(-597, 422), Vector2(-333, 422)]
+var tablePositionsArray = [Vector2(-700, 102), Vector2(-400, 102), Vector2(-100, 102), Vector2(200, 102), Vector2(-700, 422), Vector2(-400, 422), Vector2(-100, 422), Vector2(200, 422)]
 var buttonPressedIndex
 var maxTablesCount = 8
 var total_money = 200

@@ -1,14 +1,23 @@
 extends Node2D
 @onready var area_2d: Area2D = $Area2D
-@onready var customer_dialogue: Control = $CustomerDialogue
-
-func _process(delta: float) -> void:
-	position.x += 50 * delta
-
+@onready var customer_dialogue: CanvasLayer = $CustomerDialogue
+@onready var customer_pop_up: Button = $CustomerPopUp
 
 func _ready() -> void:
-	area_2d.area_entered.connect(_on_area_entered)
+	customer_pop_up.pressed.connect(_on_customer_popup_pressed)
 	
-func _on_area_entered():
+func _on_customer_popup_pressed():
 	customer_dialogue.visible = true
-	print("Customer entered something")
+	customer_pop_up.visible = false
+
+var moving = true
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("Customer has entered something")
+	customer_pop_up.visible = true
+	moving = false
+	
+func fadeAwayCustomer():
+	var tween = create_tween()
+	tween.tween_property(self, "visible", false, 1)
