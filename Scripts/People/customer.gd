@@ -21,3 +21,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func fadeAwayCustomer():
 	var tween = create_tween()
 	tween.tween_property(self, "visible", false, 1)
+	queue_free()

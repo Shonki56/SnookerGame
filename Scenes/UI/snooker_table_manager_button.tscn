@@ -79,3 +79,5 @@ text = "Quality"
 label_settings = SubResource("LabelSettings_maolu")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="turnedTableOn" from="VBoxContainer/TurnOnOff" to="." method="_on_turn_on_off_turned_table_on"]
