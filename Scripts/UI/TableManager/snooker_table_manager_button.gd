@@ -16,10 +16,13 @@ func _ready() -> void:
 
 func _on_turn_on_off_turned_table_on() -> void:
 	for table in Globals.tablesArray:
+		print("Table ID: " + str(table.tableID))
+		print("Button ID: " + str(tableNumberForButtonsID))
 		if table.tableID == tableNumberForButtonsID:
-			print(str(table.tableID))
 			if table.isTableBeingUsed == true:
 				table_number.label_settings.font_color = Color.RED
+				return
 			else:
 				table_number.label_settings.font_color = Color.WHITE
+			break
 			
