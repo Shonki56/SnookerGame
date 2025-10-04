@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c7hpvelyl8m65" path="res://Assets/MainHallAssets/BarVersion1.png" id="1_vwav4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxku2"]
-size = Vector2(152, 296)
+size = Vector2(176, 296)
 
 [node name="Bar" type="Node2D"]
 
@@ -14,7 +14,8 @@ texture = ExtResource("1_vwav4")
 offset = Vector2(5.44681, 1.54808e-13)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4, 12)
+position = Vector2(-16, 12)
 shape = SubResource("RectangleShape2D_gxku2")

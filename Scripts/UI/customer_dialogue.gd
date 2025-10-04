@@ -1,5 +1,5 @@
 extends CanvasLayer
-@onready var assign_table: Button = $VBoxContainer/AssignTable
+@onready var assign_table: Button = $AssignTable
 
 func _ready() -> void:
 	assign_table.pressed.connect(setUpTableForCustomer)

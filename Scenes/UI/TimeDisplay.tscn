@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cufsm2hv7bmjg"]
+[gd_scene load_steps=7 format=3 uid="uid://cufsm2hv7bmjg"]
 
 [ext_resource type="Script" uid="uid://b1q40c33wv5lr" path="res://Scripts/UI/TimeStuff/time_display.gd" id="1_6qf6w"]
 [ext_resource type="Texture2D" uid="uid://cdq7t3hj78772" path="res://Assets/ClockAssets/time_gui.png" id="1_fp3md"]
 [ext_resource type="LabelSettings" uid="uid://di4ramhgys0h6" path="res://label_settings.tres" id="2_k7ig5"]
 [ext_resource type="PackedScene" uid="uid://gftmt6w1egb8" path="res://Scenes/UI/total_money_label.tscn" id="4_c1ewo"]
+[ext_resource type="FontFile" uid="uid://3ouq8tas1sne" path="res://Assets/Fonts/Kenney Mini Square.ttf" id="5_qlmgh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_esxkw"]
+resource_local_to_scene = true
+font = ExtResource("5_qlmgh")
 
 [node name="TimeGUI" type="Control"]
 layout_mode = 3
@@ -89,10 +94,11 @@ offset_bottom = 19.0
 
 [node name="TotalMoneyLabel" parent="MoneyDisplay" instance=ExtResource("4_c1ewo")]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 3.0
 offset_top = 1.0
-offset_right = 70.0
+offset_right = 71.0
 offset_bottom = 21.0
-text = "$999.99"
+text = "$1000.00"
+label_settings = SubResource("LabelSettings_esxkw")
 horizontal_alignment = 2
 vertical_alignment = 1

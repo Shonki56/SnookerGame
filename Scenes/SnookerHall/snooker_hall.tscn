@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cr7f3unpjbh4r"]
+[gd_scene load_steps=11 format=3 uid="uid://cr7f3unpjbh4r"]
 
 [ext_resource type="Script" uid="uid://82mbnf1obp67" path="res://Scripts/MainGame/snooker_hall.gd" id="1_uvt8v"]
 [ext_resource type="Texture2D" uid="uid://xq01dva5dq72" path="res://Assets/Tilesets/Tilesheets/roguelikeIndoor_transparent.png" id="2_r841k"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c7jnsdbr72d4r" path="res://Scenes/UI/main_game_ui.tscn" id="4_g2b0j"]
 [ext_resource type="PackedScene" uid="uid://l21wlpf67qic" path="res://Scenes/UI/management_ui.tscn" id="5_ok22k"]
 [ext_resource type="PackedScene" uid="uid://bl8f1awr22wwc" path="res://Scenes/SnookerHall/bar.tscn" id="6_s1pno"]
-[ext_resource type="PackedScene" uid="uid://te32udsmqu0c" path="res://Scenes/People/customer.tscn" id="7_3nhge"]
 [ext_resource type="Script" uid="uid://dn8sxn8s7s6we" path="res://Scripts/People/path_follow_2d.gd" id="7_uvt8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sjwqj"]
@@ -37,7 +36,6 @@ separation = Vector2i(1, 1)
 24:0/0 = 0
 25:0/0 = 0
 26:0/0 = 0
-27:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -63,7 +61,6 @@ separation = Vector2i(1, 1)
 24:1/0 = 0
 25:1/0 = 0
 26:1/0 = 0
-27:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -89,7 +86,6 @@ separation = Vector2i(1, 1)
 24:2/0 = 0
 25:2/0 = 0
 26:2/0 = 0
-27:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -116,7 +112,6 @@ separation = Vector2i(1, 1)
 24:3/0 = 0
 25:3/0 = 0
 26:3/0 = 0
-27:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -144,7 +139,6 @@ separation = Vector2i(1, 1)
 24:4/0 = 0
 25:4/0 = 0
 26:4/0 = 0
-27:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -172,7 +166,6 @@ separation = Vector2i(1, 1)
 24:5/0 = 0
 25:5/0 = 0
 26:5/0 = 0
-27:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -200,7 +193,6 @@ separation = Vector2i(1, 1)
 24:6/0 = 0
 25:6/0 = 0
 26:6/0 = 0
-27:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -228,7 +220,6 @@ separation = Vector2i(1, 1)
 24:7/0 = 0
 25:7/0 = 0
 26:7/0 = 0
-27:7/0 = 0
 0:8/0 = 0
 1:8/0 = 0
 2:8/0 = 0
@@ -256,7 +247,6 @@ separation = Vector2i(1, 1)
 24:8/0 = 0
 25:8/0 = 0
 26:8/0 = 0
-27:8/0 = 0
 0:9/0 = 0
 1:9/0 = 0
 2:9/0 = 0
@@ -284,7 +274,6 @@ separation = Vector2i(1, 1)
 24:9/0 = 0
 25:9/0 = 0
 26:9/0 = 0
-27:9/0 = 0
 0:10/0 = 0
 1:10/0 = 0
 2:10/0 = 0
@@ -312,7 +301,6 @@ separation = Vector2i(1, 1)
 24:10/0 = 0
 25:10/0 = 0
 26:10/0 = 0
-27:10/0 = 0
 0:11/0 = 0
 1:11/0 = 0
 2:11/0 = 0
@@ -340,7 +328,6 @@ separation = Vector2i(1, 1)
 24:11/0 = 0
 25:11/0 = 0
 26:11/0 = 0
-27:11/0 = 0
 0:12/0 = 0
 1:12/0 = 0
 2:12/0 = 0
@@ -368,7 +355,6 @@ separation = Vector2i(1, 1)
 24:12/0 = 0
 25:12/0 = 0
 26:12/0 = 0
-27:12/0 = 0
 0:13/0 = 0
 1:13/0 = 0
 2:13/0 = 0
@@ -396,7 +382,6 @@ separation = Vector2i(1, 1)
 24:13/0 = 0
 25:13/0 = 0
 26:13/0 = 0
-27:13/0 = 0
 0:14/0 = 0
 1:14/0 = 0
 2:14/0 = 0
@@ -424,7 +409,6 @@ separation = Vector2i(1, 1)
 24:14/0 = 0
 25:14/0 = 0
 26:14/0 = 0
-27:14/0 = 0
 0:15/0 = 0
 1:15/0 = 0
 2:15/0 = 0
@@ -452,7 +436,6 @@ separation = Vector2i(1, 1)
 24:15/0 = 0
 25:15/0 = 0
 26:15/0 = 0
-27:15/0 = 0
 0:16/0 = 0
 1:16/0 = 0
 2:16/0 = 0
@@ -480,7 +463,6 @@ separation = Vector2i(1, 1)
 24:16/0 = 0
 25:16/0 = 0
 26:16/0 = 0
-27:16/0 = 0
 0:17/0 = 0
 1:17/0 = 0
 2:17/0 = 0
@@ -508,42 +490,13 @@ separation = Vector2i(1, 1)
 24:17/0 = 0
 25:17/0 = 0
 26:17/0 = 0
-27:17/0 = 0
-0:18/0 = 0
-1:18/0 = 0
-2:18/0 = 0
-3:18/0 = 0
-4:18/0 = 0
-5:18/0 = 0
-6:18/0 = 0
-7:18/0 = 0
-8:18/0 = 0
-9:18/0 = 0
-10:18/0 = 0
-11:18/0 = 0
-12:18/0 = 0
-13:18/0 = 0
-14:18/0 = 0
-15:18/0 = 0
-16:18/0 = 0
-17:18/0 = 0
-18:18/0 = 0
-19:18/0 = 0
-20:18/0 = 0
-21:18/0 = 0
-22:18/0 = 0
-23:18/0 = 0
-24:18/0 = 0
-25:18/0 = 0
-26:18/0 = 0
-27:18/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_83rsd"]
 sources/0 = SubResource("TileSetAtlasSource_sjwqj")
 
 [sub_resource type="Curve2D" id="Curve2D_3nhge"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 430, 483, 0, 0, 0, 0, 402, 482, 0, 0, 0, 0, 286, 459, 0, 0, 0, 0, 44, 432, 0, 0, 0, 0, 0, 349, 0, 0, 0, 0, -3, 258, 0, 0, 0, 0, -1, 204, 0, 0, 0, 0, 34, 197, 0, 0, 0, 0, 93, 190)
+"points": PackedVector2Array(0, 0, 0, 0, 430, 483, 0, 0, 0, 0, 402, 482, 0, 0, 0, 0, 286, 459, 0, 0, 0, 0, 44, 432, 0, 0, 0, 0, 0, 349, 0, 0, 0, 0, -3, 258, 0, 0, 0, 0, 3, 210, 0, 0, 0, 0, 34, 197, 0, 0, 0, 0, 93, 190)
 }
 point_count = 9
 
@@ -583,19 +536,35 @@ offset_bottom = -12.0
 [node name="Bar" parent="." instance=ExtResource("6_s1pno")]
 position = Vector2(1038, 240)
 
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(872, 94)
+[node name="PathToBar1" type="Path2D" parent="."]
+position = Vector2(843, 95)
 curve = SubResource("Curve2D_3nhge")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="Path1" type="PathFollow2D" parent="PathToBar1"]
 position = Vector2(430, 483)
-rotation = -3.13844
 rotates = false
 loop = false
 script = ExtResource("7_uvt8v")
 
-[node name="Customer" parent="Path2D/PathFollow2D" instance=ExtResource("7_3nhge")]
-rotation = 3.13298
+[node name="PathToBar2" type="Path2D" parent="."]
+position = Vector2(835, 161)
+curve = SubResource("Curve2D_3nhge")
+
+[node name="Path1" type="PathFollow2D" parent="PathToBar2"]
+position = Vector2(430, 483)
+rotates = false
+loop = false
+script = ExtResource("7_uvt8v")
+
+[node name="PathToBar3" type="Path2D" parent="."]
+position = Vector2(852, 21)
+curve = SubResource("Curve2D_3nhge")
+
+[node name="Path1" type="PathFollow2D" parent="PathToBar3"]
+position = Vector2(430, 483)
+rotates = false
+loop = false
+script = ExtResource("7_uvt8v")
 
 [node name="AddCustomer" type="Button" parent="."]
 offset_left = 617.0
@@ -604,4 +573,6 @@ offset_right = 777.0
 offset_bottom = 139.0
 text = "Generate Customer"
 
-[connection signal="child_entered_tree" from="Path2D/PathFollow2D" to="Path2D/PathFollow2D" method="_on_child_entered_tree"]
+[connection signal="child_entered_tree" from="PathToBar1/Path1" to="PathToBar1/Path1" method="_on_child_entered_tree"]
+[connection signal="child_entered_tree" from="PathToBar2/Path1" to="PathToBar2/Path1" method="_on_child_entered_tree"]
+[connection signal="child_entered_tree" from="PathToBar3/Path1" to="PathToBar3/Path1" method="_on_child_entered_tree"]

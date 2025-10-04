@@ -1,14 +1,19 @@
 extends Node2D
 @onready var tables: Node = $Tables
 @onready var management_ui: Control = $ManagementUI
-@onready var path_follow_2d: PathFollow2D = $Path2D/PathFollow2D
+
 var newCustomer = preload("res://Scenes/People/customer.tscn")
 var snookerTable = preload("res://Scenes/SnookerHall/snooker_table.tscn")
 @onready var add_customer: Button = $AddCustomer
 
+var pathsToBar = []
+
+
 func _ready():
+	pathsToBar = [$PathToBar1, $PathToBar2, $PathToBar3]
 	Globals.boughtNewTable.connect(addNewTableToSnookerHall)
-	add_customer.pressed.connect(generateCustomer)
+	#add_customer.pressed.connect(generateCustomer)
+	add_customer.pressed.connect(createCustomer)
 	
 func addNewTableToSnookerHall():
 	Globals.tableBeingBought.position = Globals.tablePositionsArray[Globals.numberOfTables - 1]
@@ -17,7 +22,25 @@ func addNewTableToSnookerHall():
 	
 func generateCustomer():
 	var customer = newCustomer.instantiate()
-	path_follow_2d.add_child(customer)
+	var pathToFollow = pathsToBar.pick_random().get_node("Path1")
+	pathToFollow.add_child(customer)
+	
+func createCustomer():
+	var pathToFollow = pathsToBar.pick_random()
+	var follow = PathFollow2D.new()
+	pathToFollow.add_child(follow)
+	var followScript = load("res://Scripts/People/path_follow_2d.gd")
+	follow.set_script(followScript)
+	follow.loop = false
+	follow.rotates = false
+	follow.rotation = 0.0
+	
+	var customer = newCustomer.instantiate()
+	follow.add_child(customer)
+	
+	follow.progress = 0
+	follow.set_process(true)
+	
 	
 	
 	
