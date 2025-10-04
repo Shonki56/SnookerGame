@@ -1,12 +1,21 @@
 extends Node2D
 @onready var tables: Node = $Tables
 @onready var management_ui: Control = $ManagementUI
+@onready var custom_tabs_for_ui: Control = $Camera2D/CustomTabsForUI
 
 var newCustomer = preload("res://Scenes/People/customer.tscn")
 var snookerTable = preload("res://Scenes/SnookerHall/snooker_table.tscn")
 @onready var add_customer: Button = $AddCustomer
 
 var pathsToBar = []
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("OpenUIMenu"):
+		custom_tabs_for_ui.visible = !custom_tabs_for_ui.visible
+	if custom_tabs_for_ui.visible == true:
+		Globals.isManagementPanelVisible = true
+	else:
+		Globals.isManagementPanelVisible = false
 
 
 func _ready():

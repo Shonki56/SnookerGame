@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://8a8pbi238hnx"]
+[gd_scene load_steps=7 format=3 uid="uid://8a8pbi238hnx"]
 
 [ext_resource type="Script" uid="uid://b1q40c33wv5lr" path="res://Scripts/UI/TimeStuff/time_display.gd" id="1_3opaq"]
 [ext_resource type="Texture2D" uid="uid://cdq7t3hj78772" path="res://Assets/ClockAssets/time_gui.png" id="2_50b43"]
 [ext_resource type="LabelSettings" uid="uid://di4ramhgys0h6" path="res://label_settings.tres" id="3_cmqs1"]
 [ext_resource type="PackedScene" uid="uid://gftmt6w1egb8" path="res://Scenes/UI/total_money_label.tscn" id="4_4c0df"]
+[ext_resource type="FontFile" uid="uid://3ouq8tas1sne" path="res://Assets/Fonts/Kenney Mini Square.ttf" id="5_50b43"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmqs1"]
+resource_local_to_scene = true
+font = ExtResource("5_50b43")
 
 [node name="TimeGUI" type="Control"]
 layout_mode = 3
@@ -94,5 +99,6 @@ offset_top = 5.0
 offset_right = 96.0
 offset_bottom = 25.0
 text = "$999.99"
+label_settings = SubResource("LabelSettings_cmqs1")
 horizontal_alignment = 2
 vertical_alignment = 1

@@ -7,11 +7,6 @@ var tableManager = preload("res://Scenes/UI/snooker_table_manager_button.tscn")
 func _ready() -> void:
 	Globals.updateTableButtonsArray.connect(createCustomTableManager)
 	
-
-func _input(event):
-	if Input.is_action_just_pressed("OpenManagementTablet"):
-		showManagementTablet()
-		
 func _process(delta: float) -> void:
 	position.x = Globals.cameraPosition.x
 	position.y = Globals.cameraPosition.y

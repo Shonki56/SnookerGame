@@ -1,0 +1,160 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmn5vemg0nhq1"]
+
+[sub_resource type="GDScript" id="GDScript_irlbq"]
+script/source = "extends Control
+@onready var tables_page: Control = $TablesPage
+@onready var tables_button: Button = $Tabs/TablesButton
+@onready var shop_button: Button = $Tabs/ShopButton
+@onready var settings_button: Button = $Tabs/SettingsButton
+@onready var shop_page: Control = $ShopPage
+@onready var settings_page: Control = $SettingsPage
+@onready var add_table: Button = $TablesPage/AddTable
+@onready var tables_container: GridContainer = $TablesPage/TablesContainer
+var tableButton = preload(\"res://Scenes/UI/snooker_table_manager_button.tscn\")
+
+var defaultTab
+
+var currentTab
+
+
+enum tabs{TABLES, SHOP, SETTINGS}
+
+func _ready() -> void:
+	defaultTab = tables_page
+	currentTab = tables_page	
+	tables_button.pressed.connect(changePageToTables)
+	shop_button.pressed.connect(changePageToShop)
+	settings_button.pressed.connect(changePageToSettings)
+	add_table.pressed.connect(addTableToTablesContainer)	
+func addTableToTablesContainer():
+	var table = tableButton.instantiate()
+	tables_container.add_child(table)
+	
+	
+	
+func changePageToTables():
+	currentTab.visible = false
+	currentTab = tables_page
+	currentTab.visible = true
+	
+func changePageToShop():
+	currentTab.visible = false
+	currentTab = shop_page
+	currentTab.visible = true
+	
+func changePageToSettings():
+	currentTab.visible = false
+	currentTab = settings_page
+	currentTab.visible = true
+	
+"
+
+[node name="CustomTabs" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_irlbq")
+
+[node name="Tabs" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 0.12
+offset_right = 1150.0
+offset_bottom = 73.0
+theme_override_constants/separation = 125
+
+[node name="TablesButton" type="Button" parent="Tabs"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Tables"
+
+[node name="ShopButton" type="Button" parent="Tabs"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Shop"
+
+[node name="SettingsButton" type="Button" parent="Tabs"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Settings"
+
+[node name="TablesPage" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.127
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.296005
+offset_right = 4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="TablesPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.855696, 0, 0.0572401, 1)
+
+[node name="TablesContainer" type="GridContainer" parent="TablesPage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.598
+anchor_bottom = 1.0
+offset_right = -0.288086
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="AddTable" type="Button" parent="TablesPage"]
+layout_mode = 0
+offset_left = 649.0
+offset_top = 159.296
+offset_right = 731.0
+offset_bottom = 190.296
+text = "Add table"
+
+[node name="ShopPage" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_top = 0.127
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.296005
+offset_right = 4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ShopPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.0392157, 1, 1)
+
+[node name="SettingsPage" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_top = 0.127
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.296005
+offset_right = 4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="SettingsPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
