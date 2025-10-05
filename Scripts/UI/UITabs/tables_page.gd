@@ -3,6 +3,9 @@ extends Control
 
 var tableManagementPanel = preload("res://Scenes/UI/snooker_table_manager_button.tscn")
 
+func _ready() -> void:
+	Globals.updateTableButtonsArray.connect(createCustomTableManager)
+
 func createCustomTableManager():
 	var newManager = tableManagementPanel.instantiate()
 	tables_grid_container.add_child(newManager)

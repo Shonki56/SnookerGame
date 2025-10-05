@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvsnhiiys4k7o"]
+[gd_scene load_steps=7 format=3 uid="uid://cvsnhiiys4k7o"]
 
 [ext_resource type="Script" uid="uid://dfahmhgof5c7k" path="res://Scripts/UI/custom_tabs_for_ui.gd" id="1_wuoek"]
+[ext_resource type="Script" uid="uid://d3jwbs1ecxouj" path="res://Scripts/UI/tables_shop.gd" id="2_47q7k"]
 [ext_resource type="Script" uid="uid://u6ct70radtmq" path="res://Scripts/UI/UITabs/tables_page.gd" id="2_fboy8"]
+[ext_resource type="Script" uid="uid://bp52euxfkp0of" path="res://Scripts/MainGame/basic_table.gd" id="3_xtli7"]
+[ext_resource type="Script" uid="uid://1pd0cf2bdop8" path="res://Scripts/MainGame/club_table.gd" id="4_c0gxv"]
+[ext_resource type="Script" uid="uid://brm0yahd0wnur" path="res://Scripts/MainGame/pro_table.gd" id="5_cxcr8"]
 
 [node name="CustomTabsForUI" type="Control"]
 layout_mode = 3
@@ -13,7 +17,6 @@ grow_vertical = 2
 script = ExtResource("1_wuoek")
 
 [node name="SettingsPage" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,10 +25,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="SettingsPage"]
-offset_left = -4.0
-offset_top = 104.0
-offset_right = 1157.0
-offset_bottom = 654.0
+layout_mode = 0
+offset_left = -68.0
+offset_top = -53.0
+offset_right = 1252.0
+offset_bottom = 705.0
 color = Color(0.133783, 0.609139, 0.688068, 1)
 
 [node name="ShopPage" type="Control" parent="."]
@@ -38,37 +42,72 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="ShopPage"]
-offset_left = -4.0
-offset_top = 104.0
-offset_right = 1157.0
-offset_bottom = 654.0
+layout_mode = 0
+offset_left = -94.0
+offset_top = -61.0
+offset_right = 1067.0
+offset_bottom = 527.0
+scale = Vector2(1.25058, 1.25058)
 color = Color(0.830367, 0.541102, 0.186939, 1)
 
+[node name="TablesShop" type="BoxContainer" parent="ShopPage"]
+offset_left = 810.0
+offset_top = 403.0
+offset_right = 1150.0
+offset_bottom = 454.0
+vertical = true
+script = ExtResource("2_47q7k")
+
+[node name="Basic Table" type="Button" parent="ShopPage/TablesShop"]
+layout_mode = 2
+text = "Basic Table
+"
+script = ExtResource("3_xtli7")
+
+[node name="Club Table" type="Button" parent="ShopPage/TablesShop"]
+layout_mode = 2
+text = "Club Table
+"
+script = ExtResource("4_c0gxv")
+
+[node name="Pro Table" type="Button" parent="ShopPage/TablesShop"]
+layout_mode = 2
+text = "Pro Table
+"
+script = ExtResource("5_cxcr8")
+
 [node name="TablesPage" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 106.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_fboy8")
 
 [node name="ColorRect" type="ColorRect" parent="TablesPage"]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 104.0
-offset_right = 1157.0
-offset_bottom = 654.0
-color = Color(0.897838, 0.431297, 0.607481, 1)
+offset_left = -15.0
+offset_top = -124.0
+offset_right = 1218.0
+offset_bottom = 563.0
+color = Color(0.706557, 0.334571, 0.349113, 1)
 
 [node name="TablesGridContainer" type="GridContainer" parent="TablesPage"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 78.0
+offset_right = 763.0
+offset_bottom = 538.0
+columns = 4
 
 [node name="TabButtonHBox" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 1151.0
+offset_left = -3.0
+offset_right = 1148.0
 offset_bottom = 104.0
 theme_override_constants/separation = 30
 

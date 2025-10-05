@@ -19,6 +19,7 @@ func _ready() -> void:
 	tables_button.pressed.connect(changeToTablesPage)
 	shop_button.pressed.connect(changeToShopPage)
 	settings_button.pressed.connect(changeToSettingsPage)
+	defaultPage.visible = true
 	
 func changePageFunc(page):
 	currentPage.visible = false

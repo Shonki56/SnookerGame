@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://df0qn713b5jhp"]
 
-[ext_resource type="Script" uid="uid://blgv7g6qrjja4" path="res://Scripts/UI/customer_dialgue.gd" id="1_eqjgf"]
+[ext_resource type="Script" uid="uid://blgv7g6qrjja4" path="res://Scripts/UI/Customer/customer_dialgue.gd" id="1_eqjgf"]
 [ext_resource type="PackedScene" uid="uid://bpexlth1ph6al" path="res://Scenes/UI/table_count.tscn" id="1_o1gt7"]
-[ext_resource type="Script" uid="uid://ticjqnmpdqm1" path="res://Scripts/UI/customer_dialogue.gd" id="1_up4o4"]
+[ext_resource type="Script" uid="uid://ticjqnmpdqm1" path="res://Scripts/UI/Customer/customer_dialogue.gd" id="1_up4o4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_up4o4"]
 font_color = Color(0, 0, 0, 1)
