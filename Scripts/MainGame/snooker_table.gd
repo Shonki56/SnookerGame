@@ -1,11 +1,12 @@
 extends Node2D
 @onready var color_rect: ColorRect = $ColorRect
 @onready var pay_timer: Timer = $PayTimer
-@export var tableQuality: Globals.tableQuality
 @export var tablePricePerHour: float
 @onready var time_system: TimeSystem = $TimeSystem
 @onready var tableID: int
 var isTableBeingUsed = false
+
+var table_self: Table
 
 var currentSessionPrice = 0
 
@@ -51,5 +52,5 @@ func showPopUpForMoneyMade():
 	Globals.showPopUp.emit()
 	
 func sellTable():
-	Globals.total_money += Globals.tableInfo[tableQualityString]["priceToBuy"]
+	Globals.total_money += table_self.table_price
 	queue_free()

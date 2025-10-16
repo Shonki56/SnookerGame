@@ -1,6 +1,7 @@
 extends Control
 @onready var v_box_container: VBoxContainer = $TurnTablesOnOffBox
 @onready var h_box_container: GridContainer = $HBoxContainer
+@onready var tables_shop: BoxContainer = $TablesShop
 
 var tableManager = preload("res://Scenes/UI/snooker_table_manager_button.tscn")
 
